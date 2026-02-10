@@ -1,0 +1,28 @@
+package main
+
+import (
+	"io"
+	"os"
+	"path/filepath"
+)
+
+func main() {
+	src := "Icon-192.png"
+	dstDir := "public/icons"
+	dst := filepath.Join(dstDir, "Icon-192.png")
+	os.MkdirAll(dstDir, 0755)
+	in, err := os.Open(src)
+	if err != nil {
+		panic(err)
+	}
+	defer in.Close()
+	out, err := os.Create(dst)
+	if err != nil {
+		panic(err)
+	}
+	defer out.Close()
+	_, err = io.Copy(out, in)
+	if err != nil {
+		panic(err)
+	}
+}

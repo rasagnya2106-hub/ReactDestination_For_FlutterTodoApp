@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A new Flutter application.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="flutter_firebase_todo_app">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <title>flutter_firebase_todo_app</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', () => {
+        navigator.serviceWorker.register('flutter_service_worker.js')
+          .then(() => console.log('Service worker registered successfully.'))
+          .catch(err => console.error('Service worker registration failed:', err));
+      });
+    }
+  </script>
+  <script src="main.js" type="application/javascript"></script>
+</body>
+</html>
